@@ -1,0 +1,23 @@
+extends ../application.pug
+
+block content
+  .container
+    .row
+      .col-xs-8.offset-xs-2
+        h1 Create a New Movies
+        hr
+        form
+          div(class="form-group")
+            label Title
+            input(type="text" class="form-control")
+          div(class="form-group")
+            label Cover Image URL
+            input(type="text" class="form-control")
+          div(class="form-group")
+            label Director
+            input(type="text" class="form-control")
+          div(class="form-group")
+            label Description
+            textarea(class="form-control" rows=5)
+          div(class="form-group text-xs-right")
+            button(type="submit" class="btn btn-lg btn-success") Create a movie
