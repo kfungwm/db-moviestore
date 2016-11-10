@@ -6,18 +6,18 @@ block content
       .col-xs-8.offset-xs-2
         h1 Create a New Movies
         hr
-        form
+        form(action="/movies" method="POST")
           div(class="form-group")
-            label Title
-            input(type="text" class="form-control")
+            label(for="movie-title") Title
+            input(name="title" type="text" class="form-control" id="movie-title")
           div(class="form-group")
-            label Cover Image URL
-            input(type="text" class="form-control")
+            label(for="movie-cover") Cover Image URL
+            input(name="imageURL" type="text" class="form-control" id="movie-cover")
           div(class="form-group")
-            label Director
-            input(type="text" class="form-control")
+            label(for="movie-director") Director
+            input(name="director" type="text" class="form-control" id="movie-director")
           div(class="form-group")
-            label Description
-            textarea(class="form-control" rows=5)
+            label(for="movie-description") Description
+            textarea(name="description" class="form-control" rows=5 id="movie-description")
           div(class="form-group text-xs-right")
             button(type="submit" class="btn btn-lg btn-success") Create a movie

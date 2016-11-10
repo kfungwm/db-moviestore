@@ -1,20 +1,19 @@
 extends ../application.pug
 
 block content
-  h1 Listing Movies
-  each movie in movies
+  .container
     .card.card-block
       .row
         .col-md-4.hidden-md-down
-          img(src=movie.imageURL alt=movie.title + "Cover Image" class="img-fluid")
+          img(src=movie.imageURL alt=movie.title + " Cover Image" class="img-fluid")
         .col-xs-12.col-md-8
           h2= movie.title
           h5= movie.director
           p= movie.description
           .row
             .col-xs-3.offset-xs-6
-              a(href="/movies/" + movie.id + "/edit" class="btn btn-warning") EDIT MOVIE
+              a(href='/movies/' + movie.id + "/edit" class="btn btn-warning btn-block") EDIT MOVIE
             .col-xs-3
               form(action="/movies/" + movie.id method="POST")
                 input(type="hidden" name="_method" value="DELETE")
-                button(type="submit", class="btn btn-danger btn-block") DELETE
+                button(type="submit" class="btn btn-danger btn-block") DELETE

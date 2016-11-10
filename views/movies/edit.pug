@@ -1,0 +1,21 @@
+extends ../application.pug
+
+block content
+  .container
+    h1 Edit Form
+    hr
+    form(action="/movies/" + movie.id method="PUT")
+      div(class="form-group")
+        label(for="movie-title") Title
+        input(name="title" type="text" class="form-control" id="movie-title" value=movie.title)
+      div(class="form-group")
+        label(for="movie-cover-image") Cover Image URL
+        input(name="imageURL" type="text" class="form-control" id="movie-cover-image" value=movie.imageURL)
+      div(class="form-group")
+        label(for="movie-director") Director
+        input(name="director" type="text" class="form-control" id="movie-director" value=movie.director)
+      div(class="form-group")
+        label(for="movie-description") Description
+        textarea(name="description" class="form-control" rows=5 id="movie-description")= movie.description
+      div(class="form-group text-xs-right")
+        button(type="submit" class="btn btn-lg btn-success") Submit
