@@ -4,7 +4,8 @@ block content
   .container
     h1 Edit Form
     hr
-    form(action="/movies/" + movie.id method="PUT")
+    form(action="/movies/" + movie.id method="POST")
+      input(type="hidden" name="_method" value="PUT")
       div(class="form-group")
         label(for="movie-title") Title
         input(name="title" type="text" class="form-control" id="movie-title" value=movie.title)

@@ -49,8 +49,8 @@ router.post('/', (request, response) => {
 });
 
 
-router.put('/id', (request, response) => {
-  Movie.update(request.params, {
+router.put('/:id', (request, response) => {
+  Movie.update(request.body, {
     where: {
       id: request.params.id
     }
